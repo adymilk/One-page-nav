@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单页导航功能实现</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		img{
+			display: block;
+		}
+
+		.right{
+			position: fixed;
+			right: 0;
+			top: 50%;
+
+		}
+		.right ul li a{
+			color: yellow;
+			text-decoration: none;
+			display: block;
+		}
+		.right ul .current a{
+			background-color: black;
+		}
+		.right ul li{
+			background-color: red;
+			line-height: 80px;
+			text-align: center;
+			border: 1px solid yellow;
+			width: 100px;
+			list-style: none;
+		}
+	</style>
+</head>
+<body>
+
+
+<img class="lazy" id="P1" alt="" width="100%" height="880" data-original="http://www.pgdiy.com/Template/pc/pgdiy/Static/images/activity/new_year/pic01.jpg" />
+
+<img class="lazy" id="P2" alt="" width="100%" height="880" data-original="http://www.pgdiy.com/Template/pc/pgdiy/Static/images/activity/new_year/pic02.jpg" />
+
+<img class="lazy" id="P3" alt="" width="100%" height="880" data-original="http://www.pgdiy.com/Template/pc/pgdiy/Static/images/activity/new_year/pic04.jpg" />
+
+<img class="lazy" id="P4" alt="" width="100%" height="880" data-original="http://www.pgdiy.com/Template/pc/pgdiy/Static/images/activity/new_year/pic10.jpg" />
+
+
+<div class="right" id="nav">
+	<ul>
+		<li><a href="#P1">一楼</a></li>
+		<li><a href="#P2">二楼</a></li>
+		<li><a href="#P3">三楼</a></li>
+		<li><a href="#P4">四楼</a></li>
+	</ul>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-one-page-nav/3.0.0/jquery.nav.min.js"></script>
+
+
+<script type="text/javascript">
+	$(function() {
+    $("img.lazy").lazyload({//图片懒加载
+    	effect : "fadeIn",//图片显示效果
+    	threshold : 500,//距离可视区域提前加载图片
+    });
+
+    $('#nav').onePageNav();//单页导航
+});
+</script>
+</body>
+</html>
